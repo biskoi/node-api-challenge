@@ -40,13 +40,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+   This week, we learned about using express middleware, routing, and creating endpoints with express.
+
 - [ ] Describe Middleware?
+
+   Middleware is basically pieces of code that we can put in between when the server receives the request, and when the request is actually executed. For example, we could have a logger middleware that logs out information about the request before it actually hits any routes, or we could have validation middleware that will either pass the data on to the endpoint, or throw an error and prevent the bad data from reaching the endpoint.
 
 - [ ] Describe a Resource?
 
+   A resource is anything that is stored within the database that the user can interact with through the API, which interacts with the resources themselves with database helpers. These helpers will be the ones to actually perform CRUD operations on the database.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+   APIs can return status codes depending on the outcome of the operation, such as 200 for OK, 201 for created, 400 if the user failed to make a valid request, or a 500 if the server is dying in some way.
+
 - [ ] How can we partition our application into sub-applications?
+
+   We can partition our API into sub-routes using express.Router, so that we don't have to store all of our CRUD operations in one single file. This allows us to keep separate "sub-servers" in their own file. For example, in this sprint, we have both projectsRouter and actionsRouter that are combined into the server.js file to make up our complete API.
 
 ## Minimum Viable Product
 
